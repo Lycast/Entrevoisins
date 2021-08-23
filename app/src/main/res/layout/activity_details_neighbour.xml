@@ -13,7 +13,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:src="" />
 
     <TextView
         android:id="@+id/tv_details_name"
