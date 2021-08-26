@@ -8,11 +8,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/OpenClassrooms-master/Android/Entrevoisins/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2526041666666667" />
+        <entry key="..\:/OpenClassrooms-master/Android/Entrevoisins/app/src/main/res/drawable/ic_account.xml" value="0.2526041666666667" />
+        <entry key="..\:/OpenClassrooms-master/Android/Entrevoisins/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.2526041666666667" />
+        <entry key="..\:/OpenClassrooms-master/Android/Entrevoisins/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2526041666666667" />
+        <entry key="..\:/OpenClassrooms-master/Android/Entrevoisins/app/src/main/res/drawable/ic_person_add_white_24dp.xml" value="0.2526041666666667" />
+        <entry key="..\:/OpenClassrooms-master/Android/Entrevoisins/app/src/main/res/drawable/ic_star_border_white_24dp.xml" value="0.2526041666666667" />
+        <entry key="..\:/OpenClassrooms-master/Android/Entrevoisins/app/src/main/res/drawable/ic_star_white_24dp.xml" value="0.2526041666666667" />
         <entry key="..\:/OpenClassrooms-master/Android/Entrevoisins/app/src/main/res/layout/activity_add_neighbour.xml" value="0.4161458333333333" />
-        <entry key="..\:/OpenClassrooms-master/Android/Entrevoisins/app/src/main/res/layout/activity_details_neighbour.xml" value="0.4161458333333333" />
+        <entry key="..\:/OpenClassrooms-master/Android/Entrevoisins/app/src/main/res/layout/activity_details_neighbour.xml" value="0.42857142857142855" />
         <entry key="..\:/OpenClassrooms-master/Android/Entrevoisins/app/src/main/res/layout/activity_list_neighbour.xml" value="0.4161458333333333" />
         <entry key="..\:/OpenClassrooms-master/Android/Entrevoisins/app/src/main/res/layout/fragment_list_neighbour.xml" value="0.4161458333333333" />
         <entry key="..\:/OpenClassrooms-master/Android/Entrevoisins/app/src/main/res/layout/fragment_neighbour.xml" value="0.4161458333333333" />
+        <entry key="..\:/OpenClassrooms-master/Android/Entrevoisins/app/src/main/res/layout/fragment_neighbour_favorite.xml" value="0.4161458333333333" />
+        <entry key="..\:/OpenClassrooms-master/Android/Entrevoisins/app/src/main/res/layout/fragment_neighbour_favorite_list.xml" value="0.275" />
         <entry key="..\:/OpenClassrooms-master/Android/Entrevoisins/app/src/main/res/layout/fragment_neighbour_list.xml" value="0.4161458333333333" />
       </map>
     </option>
