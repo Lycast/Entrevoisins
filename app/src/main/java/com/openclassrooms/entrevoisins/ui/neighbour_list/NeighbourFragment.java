@@ -22,6 +22,7 @@ import com.openclassrooms.entrevoisins.service.NeighbourApiService;
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 
+import java.io.Serializable;
 import java.util.List;
 
 
@@ -103,9 +104,7 @@ public class NeighbourFragment extends Fragment {
                     @Override
                     public void onItemClicked(RecyclerView recyclerView, int position, View v) {
                         Intent intent = new Intent(getContext(), DetailsNeighbourActivity.class);
-                        //putExtra here **
-
-
+                        intent.putExtra("neighbour", (Serializable) mNeighbours.get(position));
                         startActivity(intent);
                     }
                 });

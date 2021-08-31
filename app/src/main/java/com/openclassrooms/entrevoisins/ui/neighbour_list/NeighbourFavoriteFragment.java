@@ -29,7 +29,7 @@ import java.util.List;
 public class NeighbourFavoriteFragment extends Fragment {
 
     private NeighbourApiService mApiService;
-    private List<Neighbour> mNeighbours;
+    private List<Neighbour> mFavoriteNeighbours;
     private RecyclerView mRecyclerView;
 
 
@@ -63,8 +63,8 @@ public class NeighbourFavoriteFragment extends Fragment {
      * Init the List of neighbours
      */
     private void initList() {
-        mNeighbours = mApiService.getNeighbours();
-        mRecyclerView.setAdapter(new MyNeighbourRecyclerViewAdapter(mNeighbours));
+        mFavoriteNeighbours = mApiService.getNeighbours();
+        mRecyclerView.setAdapter(new MyNeighbourRecyclerViewAdapter(mFavoriteNeighbours));
     }
 
     @Override
