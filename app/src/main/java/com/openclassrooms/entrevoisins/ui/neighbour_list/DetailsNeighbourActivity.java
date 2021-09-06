@@ -1,6 +1,5 @@
 package com.openclassrooms.entrevoisins.ui.neighbour_list;
 
-import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,13 +8,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
 import com.openclassrooms.entrevoisins.R;
 import com.openclassrooms.entrevoisins.di.DI;
 import com.openclassrooms.entrevoisins.model.Neighbour;
 import com.openclassrooms.entrevoisins.service.NeighbourApiService;
-
-import java.io.Serializable;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -44,6 +40,7 @@ public class DetailsNeighbourActivity extends AppCompatActivity {
 
     NeighbourApiService mNeighbourApiService;
     Neighbour neighbour;
+    FloatingActionButton fabFavorite;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +49,7 @@ public class DetailsNeighbourActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         mNeighbourApiService = DI.getNeighbourApiService();
         neighbour = (Neighbour) getIntent().getExtras().getSerializable("neighbour");
+        fabFavorite = findViewById(R.id.fab_favorite);
         populateNeighbour();
 
         imgDetailsBack.setOnClickListener(new View.OnClickListener() {
@@ -61,16 +59,15 @@ public class DetailsNeighbourActivity extends AppCompatActivity {
             }
         });
 
-        FloatingActionButton fabFavorite = findViewById(R.id.fab_favorite);
         fabFavorite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(!neighbour.isFavorite()) {
                     mNeighbourApiService.addFavoriteNeighbour(neighbour);
-                    ((FloatingActionButton) view).setImageResource(R.drawable.ic_star_white_24dp);
+                    fabFavorite.setImageResource(R.drawable.ic_star_white_24dp);
                 } else {
                     mNeighbourApiService.deleteFavoriteNeighbour(neighbour);
-                    ((FloatingActionButton) view).setImageResource(R.drawable.ic_star_border_white_24dp);
+                    fabFavorite.setImageResource(R.drawable.ic_star_border_white_24dp);
                 }
             }
         });
@@ -87,5 +84,8 @@ public class DetailsNeighbourActivity extends AppCompatActivity {
          Glide.with(imgDetailsAvatar.getContext())
                  .load(neighbour.getAvatarUrl())
                  .into(imgDetailsAvatar);
+         if (neighbour.isFavorite()) {
+             fabFavorite.setImageResource(R.drawable.ic_star_white_24dp);
+         }
     }
 }
