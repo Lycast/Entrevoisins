@@ -38,9 +38,11 @@ public class DetailsNeighbourActivity extends AppCompatActivity {
     @BindView(R.id.tv_details_aboutme)
     public TextView tvAboutMe;
 
+    @BindView(R.id.fab_favorite)
+    public FloatingActionButton fabFavorite;
+
     NeighbourApiService mNeighbourApiService;
     Neighbour neighbour;
-    FloatingActionButton fabFavorite;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,8 +50,6 @@ public class DetailsNeighbourActivity extends AppCompatActivity {
         setContentView(R.layout.activity_details_neighbour);
         ButterKnife.bind(this);
         mNeighbourApiService = DI.getNeighbourApiService();
-        neighbour = (Neighbour) getIntent().getExtras().getSerializable("neighbour");
-        fabFavorite = findViewById(R.id.fab_favorite);
         populateNeighbour();
 
         imgDetailsBack.setOnClickListener(new View.OnClickListener() {
@@ -63,10 +63,10 @@ public class DetailsNeighbourActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(!neighbour.isFavorite()) {
-                    mNeighbourApiService.addFavoriteNeighbour(neighbour);
+                    mNeighbourApiService.setIsFavorite(neighbour, true);
                     fabFavorite.setImageResource(R.drawable.ic_star_white_24dp);
                 } else {
-                    mNeighbourApiService.deleteFavoriteNeighbour(neighbour);
+                    mNeighbourApiService.setIsFavorite(neighbour, false);
                     fabFavorite.setImageResource(R.drawable.ic_star_border_white_24dp);
                 }
             }
@@ -74,6 +74,8 @@ public class DetailsNeighbourActivity extends AppCompatActivity {
     }
 
      private void populateNeighbour() {
+
+         neighbour = (Neighbour) getIntent().getExtras().getSerializable("neighbour");
 
          tvDetailsName.setText(neighbour.getName());
          tvDetailsNameCard01.setText(neighbour.getName());

@@ -48,28 +48,13 @@ public class DummyNeighbourApiService implements  NeighbourApiService {
         neighbours.add(neighbour);
     }
 
-    @Override
-    public void addFavoriteNeighbour(Neighbour neighbour) {
-        setIsFavorite(neighbour, true);
-    }
-
-    @Override
-    public void deleteFavoriteNeighbour(Neighbour neighbour) {
-        setIsFavorite(neighbour, false);
-    }
-
     /**
      * set is favorite
      * @param neighbour
      * @param value
      */
-    private void setIsFavorite(Neighbour neighbour, boolean value){
-        neighbour.setFavorite(value);
-        for(Neighbour n : neighbours){
-            if(n.getId() == neighbour.getId()){
-                n.setFavorite(value);
-                break;
-            }
-        }
+    public void setIsFavorite(Neighbour neighbour, boolean value){
+          int position = neighbours.indexOf(neighbour);
+          neighbours.get(position).setFavorite(value);
     }
 }
