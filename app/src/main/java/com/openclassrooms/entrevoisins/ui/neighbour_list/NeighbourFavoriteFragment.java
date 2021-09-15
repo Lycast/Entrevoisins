@@ -68,7 +68,7 @@ public class NeighbourFavoriteFragment extends Fragment {
      * Init the List of neighbours
      */
     private void initList() {
-        mFavoriteNeighbours = mApiService.getFavoriteNeighbour();
+        mFavoriteNeighbours = mApiService.getFavoriteNeighbours();
         mRecyclerView.setAdapter(new MyNeighbourRecyclerViewAdapter(mFavoriteNeighbours));
     }
 
@@ -101,13 +101,10 @@ public class NeighbourFavoriteFragment extends Fragment {
     }
     private void configureOnClickRecyclerView() {
         ItemClickSupport.addTo(mRecyclerView, R.layout.fragment_neighbour_list)
-                .setOnItemClickListener(new ItemClickSupport.OnItemClickListener() {
-                    @Override
-                    public void onItemClicked(RecyclerView recyclerView, int position, View v) {
-                        Intent intent = new Intent(getContext(), DetailsNeighbourActivity.class);
-                        intent.putExtra("neighbour", (Serializable) mFavoriteNeighbours.get(position));
-                        startActivity(intent);
-                    }
+                .setOnItemClickListener((recyclerView, position, v) -> {
+                    Intent intent = new Intent(getContext(), DetailsNeighbourActivity.class);
+                    intent.putExtra("neighbour", (Serializable) mFavoriteNeighbours.get(position));
+                    startActivity(intent);
                 });
     }
 }

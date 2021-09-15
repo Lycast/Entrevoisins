@@ -20,7 +20,7 @@ public interface NeighbourApiService {
      * Get Neighbour favorite
      * @return {@link List}
      */
-    List<Neighbour> getFavoriteNeighbour();
+    List<Neighbour> getFavoriteNeighbours();
 
     /**
      * Deletes a neighbour
