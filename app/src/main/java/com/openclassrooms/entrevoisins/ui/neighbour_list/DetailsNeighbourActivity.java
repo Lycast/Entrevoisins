@@ -52,23 +52,15 @@ public class DetailsNeighbourActivity extends AppCompatActivity {
         mNeighbourApiService = DI.getNeighbourApiService();
         populateNeighbour();
 
-        imgDetailsBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
+        imgDetailsBack.setOnClickListener(view -> finish());
 
-        fabFavorite.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(!neighbour.isFavorite()) {
-                    mNeighbourApiService.setIsFavorite(neighbour, true);
-                    fabFavorite.setImageResource(R.drawable.ic_star_white_24dp);
-                } else {
-                    mNeighbourApiService.setIsFavorite(neighbour, false);
-                    fabFavorite.setImageResource(R.drawable.ic_star_border_white_24dp);
-                }
+        fabFavorite.setOnClickListener(view -> {
+            if(!neighbour.isFavorite()) {
+                mNeighbourApiService.setIsFavorite(neighbour, true);
+                fabFavorite.setImageResource(R.drawable.ic_star_white_24dp);
+            } else {
+                mNeighbourApiService.setIsFavorite(neighbour, false);
+                fabFavorite.setImageResource(R.drawable.ic_star_border_white_24dp);
             }
         });
     }
