@@ -1,8 +1,9 @@
-# OpenClassrooms
+# Entrevoisins
 
-Ce dépôt contient mon projet 3,l'application Entrevoisins, de la formation developpeur d'application android d'Open Class Room.
+Ce dépôt contient mon projet 3 de la formation développeur d'application android d'OpenClassrooms,l'application Entrevoisins.
+L'application permet à des personnes d’un même quartier de se rendre des petits services.
 
-# Les nouvelles fonctionnalité
+# Les nouvelles fonctionnalitées
 
 ● l'ajout du clic sur un voisin de la liste pour ouvrir une page de description du voisin
 
@@ -12,12 +13,18 @@ Ce dépôt contient mon projet 3,l'application Entrevoisins, de la formation dev
 
 ● le nom de l'utilisateur
 
-● un bouton d’ajout du voisin à la liste de favoris
+● un bouton d’ajout d'un voisin à la liste de favoris
 
 ● un onglet Favoris dans lequel les utilisateurs marqués comme favoris s’affichent
- 
 
-# Comment ajouter ce projet a votre Andoid Studio
+# Librairies
+
+[Android Support Library](https://developer.android.com/topic/libraries/support-library/)
+[Glide](https://github.com/bumptech/glide/)
+[ButterKnife](https://jakewharton.github.io/butterknife/)
+[Espresso](https://developer.android.com/training/testing/espresso)
+
+# Comment ajouter ce projet à votre Andoid Studio
 
 Téléchargez le projet en cliquant sur "Code" puis sur "Download ZIP"
 
@@ -25,4 +32,4 @@ décompressez le fichier
 
 depuis Android Studio allez dans File puis open project 
 
-ensuite allez dans le dossier decompressé et selectionner celui le projet.
+ensuite allez dans le dossier décompressé et sélectionner le projet.
