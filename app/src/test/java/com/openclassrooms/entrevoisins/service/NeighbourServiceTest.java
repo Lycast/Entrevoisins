@@ -49,7 +49,7 @@ public class NeighbourServiceTest {
      * unit test for the new functionality made by Anthony
      */
     @Test
-    public void setNeighbourIsFavorite() {
+    public void setNeighbourIsFavoriteWithSuccess() {
         Neighbour neighbour = service.getNeighbours().get(0);
         service.setIsFavorite(neighbour, true);
         assertTrue(neighbour.isFavorite());

@@ -73,15 +73,15 @@ public class NeighbourFavoriteFragment extends Fragment {
     }
 
     @Override
-    public void onResume() {
-        super.onResume();
-        initList();
-    }
-
-    @Override
     public void onStart() {
         super.onStart();
         EventBus.getDefault().register(this);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        initList();
     }
 
     @Override
@@ -99,11 +99,18 @@ public class NeighbourFavoriteFragment extends Fragment {
         mApiService.deleteNeighbour(event.neighbour);
         initList();
     }
+
+    /**
+     * Fired if the user clicks on a neighbour in the list recyclerView
+     */
     private void configureOnClickRecyclerView() {
         ItemClickSupport.addTo(mRecyclerView, R.layout.fragment_neighbour_list)
                 .setOnItemClickListener((recyclerView, position, v) -> {
                     Intent intent = new Intent(getContext(), DetailsNeighbourActivity.class);
-                    intent.putExtra("neighbour", (Serializable) mFavoriteNeighbours.get(position));
+
+                    // putExtra for pass neighbour details
+                    intent.putExtra("neighbour", mFavoriteNeighbours.get(position));
+
                     startActivity(intent);
                 });
     }

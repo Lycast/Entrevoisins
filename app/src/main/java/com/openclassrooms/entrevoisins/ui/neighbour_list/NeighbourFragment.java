@@ -70,15 +70,15 @@ public class NeighbourFragment extends Fragment {
     }
 
     @Override
-    public void onResume() {
-        super.onResume();
-        initList();
-    }
-
-    @Override
     public void onStart() {
         super.onStart();
         EventBus.getDefault().register(this);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        initList();
     }
 
     @Override
@@ -98,13 +98,19 @@ public class NeighbourFragment extends Fragment {
         initList();
     }
 
+    /**
+     * Fired if the user clicks on a neighbour in the list recyclerView
+     */
     private void configureOnClickRecyclerView(){
         ItemClickSupport.addTo(mRecyclerView, R.layout.fragment_neighbour_list)
                 .setOnItemClickListener(new ItemClickSupport.OnItemClickListener() {
                     @Override
                     public void onItemClicked(RecyclerView recyclerView, int position, View v) {
                         Intent intent = new Intent(getContext(), DetailsNeighbourActivity.class);
+
+                        // putExtra for pass neighbour details
                         intent.putExtra("neighbour", (Serializable) mNeighbours.get(position));
+
                         startActivity(intent);
                     }
                 });
