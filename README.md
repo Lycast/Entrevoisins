@@ -20,7 +20,7 @@ L'application permet à des personnes d’un même quartier de se rendre des pet
 
 # Screenshot
 
-![IMG](https://i.postimg.cc/bwJyFL0p/Screenshot-entrevoisin-071347.png) ![IMG](https://i.postimg.cc/MKtZDgQ9/Screenshot-entrevoisin-071439.png) ![IMG](https://i.postimg.cc/MpF6kRtR/Screenshot-entrevoisin-071617.png)
+<img src="https://i.postimg.cc/bwJyFL0p/Screenshot-entrevoisin-071347.png" width="30%" height="30%">&ensp;<img src="https://i.postimg.cc/MKtZDgQ9/Screenshot-entrevoisin-071439.png" width="30%" height="30%">&ensp;<img src="https://i.postimg.cc/MpF6kRtR/Screenshot-entrevoisin-071617.png" width="30%" height="30%">
 
 # Librairies
 
